@@ -1,3 +1,4 @@
+package DataTypes;
 import java.util.*;
 
 public class DataTypes {

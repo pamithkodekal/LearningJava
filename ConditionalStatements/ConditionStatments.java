@@ -1,3 +1,4 @@
+package ConditionalStatements;
 import java.util.*;
 
 public class ConditionStatments {
