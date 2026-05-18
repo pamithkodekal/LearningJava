@@ -4,36 +4,40 @@ import java.util.*;
 
 public class GetBinary {
 
-    public int[] GettingBinary(int n) {
+    // Show Binary
+    public void getBinary(int n) {
 
-        int arr[] = new int[5];
-
-        for (int i = 0; i < 5; i++) {
-
-            arr[i] = -1;
-        }
+        int arr[] = new int[32];
 
         int i = 0;
 
-        while (n > 0) {
+        int temp = n;
 
-            arr[i] = n % 2;
+        while (temp > 0) {
 
-            n = n / 2;
+            arr[i] = temp % 2;
+
+            temp = temp / 2;
 
             i++;
         }
 
-        return arr;
+        System.out.print("Binary: ");
+
+        for (int j = i - 1; j >= 0; j--) {
+
+            System.out.print(arr[j]);
+        }
+
+        System.out.println();
     }
 
-    public void getBit(int n) {
-
-     Scanner bits = new Scanner(System.in);
+    // Check Bit
+    public void getBit(int n, Scanner sc) {
 
         System.out.print("What position to check: ");
 
-        int position = bits.nextInt();
+        int position = sc.nextInt();
 
         int bitMask = 1 << position;
 
@@ -44,11 +48,24 @@ public class GetBinary {
         if (operation == 0) {
 
             System.out.println("Bit is 0");
+
         } else {
 
             System.out.println("Bit is 1");
         }
-        
-        bits.close();
+    }
+
+    // Set Bit
+    public int setBit(int n, Scanner sc) {
+
+        System.out.print("What position to set: ");
+
+        int pos = sc.nextInt();
+
+        int bitMask = 1 << pos;
+
+        int updatedNumber = bitMask | n;
+
+        return updatedNumber;
     }
 }
