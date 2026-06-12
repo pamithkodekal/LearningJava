@@ -1,6 +1,7 @@
+package DataTypes;
 import java.util.*;
 
-public class Day1 {
+public class DataTypes {
     public static void main(String args[]){
         //Printing
         System.out.println("Hello World");
