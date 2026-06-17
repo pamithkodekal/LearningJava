@@ -1,35 +1,119 @@
 package LinkedList;
 
+class Node {
+
+    String data;
+    Node next;
+
+    Node(String data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+
+    Node head;
+
+    // Add at beginning
+    public void addFirst(String data) {
+
+        Node newNode = new Node(data);
+
+        newNode.next = head;
+        head = newNode;
+    }
+
+    // Add at end
+    public void addLast(String data) {
+
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+    }
+
+    // Delete first node
+    public void deleteFirst() {
+
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        head = head.next;
+    }
+
+    // Delete last node
+    public void deleteLast() {
+
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        Node secondLast = head;
+        Node lastNode = head.next;
+
+        while (lastNode.next != null) {
+            secondLast = secondLast.next;
+            lastNode = lastNode.next;
+        }
+
+        secondLast.next = null;
+    }
+
+    // Display list
+    public void display() {
+
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+
+        System.out.println("null");
+    }
+}
+
 public class LinkedListFromScratch {
 
     public static void main(String[] args) {
 
-        Node Node1 = new Node(20);
-        Node Node2 = new Node(10);
-        Node Node3 = new Node(30);
-        Node Node4 = new Node(40);
+        LinkedList list = new LinkedList();
 
-        Node1.next = Node2;
-        Node2.next = Node3;
-        Node3.next = Node4;
-      
-        System.out.println(Node1.data);
-        System.out.println(Node1.next.data);
-        System.out.println(Node1.next.next.data);
-        
-      
+        System.out.println("Add Last:");
+        list.addLast("10");
+        list.addLast("20");
+        list.addLast("30");
+        list.display();
+
+        System.out.println("\nAdd First:");
+        list.addFirst("5");
+        list.display();
+
+        System.out.println("\nDelete First:");
+        list.deleteFirst();
+        list.display();
+
+        System.out.println("\nDelete Last:");
+        list.deleteLast();
+        list.display();
     }
-}
-
- class Node {
-
-    int data;
-    Node next;
-    
-    Node (int data){
-        this.data = data;
-       
-    }
-    
-
 }
