@@ -13,7 +13,7 @@ public class EnterArray {
 
         int[] array = new int[size];
 
-        System.out.println("Enter Sorted Array:");
+        System.out.println("Enter  your Array Elements:");
 
         for (int i = 0; i < size; i++) {
             array[i] = sc.nextInt();
@@ -24,7 +24,7 @@ public class EnterArray {
             System.out.print(num + " ");
         }
         
-        sc.close();
+        //sc.close();
         return array;
     }
 }

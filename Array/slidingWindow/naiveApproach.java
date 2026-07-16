@@ -1,16 +1,12 @@
 package Array.slidingWindow;
 
-import java.util.*;
+//import java.util.*;
 
 public class naiveApproach {
 
-    public static int Maxsum(int[] arr) {
+    public static int Maxsum(int[] arr,int k) {
 
-        Scanner na = new Scanner(System.in);
-
-        System.out.println("Enter size of subarray (k): ");
-        int k = na.nextInt();
-
+    
         int max_sum = Integer.MIN_VALUE;
 
         for (int i = 0; i <= arr.length - k; i++) {
@@ -23,7 +19,7 @@ public class naiveApproach {
 
             max_sum = Math.max(current_sum, max_sum);
         }
-        na.close();
+        //na.close();
 
         return max_sum;
     }
